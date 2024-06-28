@@ -11,8 +11,8 @@ export const getAllContactsConroller = async (req, res) => {
   const data = await getAllContacts();
   res.json({
     status: 200,
+    message: 'Successfully found contacts ',
     data,
-    message: ' Success found  ',
   });
 };
 
