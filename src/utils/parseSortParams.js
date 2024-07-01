@@ -40,8 +40,8 @@ export const parseSortParams = (query) => {
   const parsedFilterType = parseFilterType(type);
   const parsedIsFavourite = parseIsFavourite(isFavourite);
   return {
-    parseOrder: parsedSortOrder,
-    parseBy: parsedSortBy,
+    sortOrder: parsedSortOrder,
+    sortBy: parsedSortBy,
     type: parsedFilterType,
     isFavourite: parsedIsFavourite,
   };
