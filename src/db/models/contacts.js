@@ -15,14 +15,14 @@ const contactShema = new Schema(
       type: String,
       required: false,
     },
-    isFavorite: {
+    isFavourite: {
       type: Boolean,
       required: false,
     },
     contactType: {
       type: String,
       enum: typeList,
-    
+
       default: 'personal',
     },
   },
