@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
 import { typeList } from '../../constant/constant.js';
+import { mongooseSaveError, setUpdateSettings } from './hooks.js';
 
 const contactShema = new Schema(
   {
@@ -25,11 +26,15 @@ const contactShema = new Schema(
 
       default: 'personal',
     },
+    userId: { type: String, required: true, ref: 'users' },
   },
   {
     timestamps: true,
     versionKey: false,
   },
 );
+contactShema.post('save', mongooseSaveError);
+contactShema.pre('findOneAndUpdate', setUpdateSettings);
+contactShema.post('findOneAndUpdate', mongooseSaveError);
 
 export const ContactCollection = model('contacts', contactShema);
