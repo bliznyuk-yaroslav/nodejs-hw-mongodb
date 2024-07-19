@@ -26,7 +26,9 @@ const contactShema = new Schema(
 
       default: 'personal',
     },
+
     userId: { type: String, required: true, ref: 'users' },
+    photo: { type: String },
   },
   {
     timestamps: true,
