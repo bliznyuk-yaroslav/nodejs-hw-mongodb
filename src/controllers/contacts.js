@@ -86,9 +86,9 @@ export const updateContactController = async (req, res) => {
   let photoUrl;
   if (photo) {
     if (env('ENABLE_CLOUDINARY') === 'true') {
-      photoUrl = await saveFileToCloudinary(photo);
+      photoUrl = await saveFileToCloudinary(photo, 'uploads');
     } else {
-      photoUrl = await saveFileToUploadDir(photo);
+      photoUrl = await saveFileToUploadDir(photo, ' uploads');
     }
   }
 
@@ -106,7 +106,7 @@ export const updateContactController = async (req, res) => {
   res.status(200).json({
     status: 200,
     message: 'Successfully patched a contact!',
-    data,
+    data: data.contact,
   });
 };
 
