@@ -30,7 +30,7 @@ export const getAllContactsConroller = async (req, res) => {
   res.json({
     status: 200,
     message: 'Successfully found contacts ',
-    data: contacts.data.length ? contacts : { data: [] },
+    data: contacts.data.length ? contacts.data : { data: [] },
   });
 };
 
