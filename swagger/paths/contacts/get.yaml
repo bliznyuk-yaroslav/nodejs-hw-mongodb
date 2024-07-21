@@ -28,32 +28,7 @@ parameters:
       type: string
       description: "All contacts's fields can be mentioned. Default value - name"
       example: 'name'
-  - in: query
-    name: name
-    schema:
-      type: string
-      example: 'Yaroslav'
-  - in: query
-    name: phoneNumber
-    schema:
-      type: string
-      example: '+380971498163'
-  - in: query
-    name: email
-    schema:
-      type: string
-      example: 'bliznyuk.yaroslav'
-  - in: query
-    name: isFavorite
-    schema:
-      type: string
-      example: true
-  - in: query
-    name: contactType
-    schema:
-      type: string
-      enum: ['work', 'home', 'personal']
-      example: 'work'
+  
 responses:
   '200':
     description: Successfully found contact!
@@ -75,7 +50,6 @@ responses:
             data:
               type: object
               required:
-                - data
                 - page
                 - perPage
                 - totalItems
